@@ -190,6 +190,7 @@ Controller::Controller()
   displayControl = DisplayControl::getInstance();
   modules.addModule(networkControl);
   modules.addModule(displayControl);
+  modules.addModule(new MotorController());
 
   setup();
 }

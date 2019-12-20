@@ -25,6 +25,7 @@
 #include <NetworkModule.h>
 #include <DisplayControl.h>
 #include <OneButton.h>
+#include <MotorController.h>
 
 /* topics */
 #define OTA_TOPIC "ota"
