@@ -36,6 +36,7 @@ void MotorController::everySecond() {
     // read current from pin 32
     uint32_t currentVoltage = readVoltage(ADC1_CHANNEL_4);
     Log.notice("current voltage: %d\n", currentVoltage);
+    Log.notice("current value: %d\n", value);
 
     ledcWrite(pwmChannel, value);
     delay(200);
