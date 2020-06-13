@@ -21,25 +21,11 @@ void MotorController::setup() {
 
     adc1_config_width(ADC_WIDTH_12Bit);
     adc1_config_channel_atten(ADC1_CHANNEL_4, ADC_ATTEN_0db);
-
-    Log.notice("coeff_a: %d\n", adc_chars->coeff_a);
-    Log.notice("coeff_b: %d\n", adc_chars->coeff_b);
-    Log.notice("v_ref: %d\n", adc_chars->vref);
-    //Check type of calibration value used to characterize ADC
-    if (val_type == ESP_ADC_CAL_VAL_EFUSE_VREF) {
-        Log.notice("eFuse Vref\n");
-    } else if (val_type == ESP_ADC_CAL_VAL_EFUSE_TP) {
-        Log.notice("Two Point\n");
-    } else {
-        Log.notice("Default\n");
-    }    
 }
 
 void MotorController::every100Milliseconds() {
     // read current from pin 32
     uint32_t currentVoltage = readVoltage(ADC1_CHANNEL_4);
-    Log.notice("current current: %d\n", currentVoltage);
-    Log.notice("current value: %d\n", value);
 
     ledcWrite(pwm1Channel, 255 - value);
     ledcWrite(pwm2Channel, 255);

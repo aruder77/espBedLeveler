@@ -1,13 +1,12 @@
-#ifndef MOTORCONTROLLER_H_
-#define MOTORCONTROLLER_H_
+#ifndef IMUSensorReader_H_
+#define IMUSensorReader_H_
 
 #include <Module.h>
 #include <driver/adc.h>
 #include <esp_adc_cal.h>
-#include <Arduino.h>
 
 
-class MotorController : public Module {
+class IMUSensorReader : public Module {
     public:
 	    const char *getName();
         virtual void setup();

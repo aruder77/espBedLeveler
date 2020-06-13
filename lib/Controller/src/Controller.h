@@ -17,10 +17,11 @@
 #define CONTROLLER_H_
 
 #include <Arduino.h>
-#include <ArduinoLog.h>
 #include <DisplayControl.h>
 #include <Module.h>
 #include <Homie.h>
+#include <MotorController.h>
+#include <IMUSensorReader.h>
 
 
 class Modules {

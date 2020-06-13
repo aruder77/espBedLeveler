@@ -94,8 +94,7 @@ Controller::Controller()
 
   // put your setup code here, to run once:
   Serial.begin(BAUD_RATE);
-  Log.begin(LOG_LEVEL_TRACE, &Serial);
-
+  
   // short press -> reset
   // long press 10 sec -> complete reset
   // double press -> config mode
@@ -103,10 +102,11 @@ Controller::Controller()
   // create all modules 
   displayControl = DisplayControl::getInstance();
   modules.addModule(displayControl);
-  modules.addModule(new MotorController());
+  modules.addModule(new IMUSensorReader());
+  //modules.addModule(new MotorController());
 
-  Homie_setFirmware("esp32Generic", "1.0.0");
-  Homie_setBrand("esp32Generic");  
+  Homie_setFirmware("espBedLeveller", "1.0.0");
+  Homie_setBrand("RUMO");  
   Homie.setLoopFunction([]() { controller->workLoop(); } );  
   Homie.setSetupFunction([]() { controller->setup(); });
 
