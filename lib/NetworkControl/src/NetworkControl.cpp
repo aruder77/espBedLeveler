@@ -104,7 +104,7 @@ void NetworkControl::afterSetup() {
 		//keep LED on
 		ledController->on();
 	} else {
-		enterConfigPortal();
+		//enterConfigPortal();
 	}
 
 	// Allow the hardware to sort itself out
@@ -162,11 +162,11 @@ void NetworkControl::reconnect()
 
 void NetworkControl::loop()
 {
-	mqttClient->loop();
+	//mqttClient->loop();
 }
 
 void NetworkControl::everySecond() {
-	reconnect();
+	//reconnect();
 }
 
 char *substr(const char *buff, uint8_t start, uint8_t len, char *substr)
